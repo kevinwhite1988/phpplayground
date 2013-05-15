@@ -19,7 +19,15 @@ require("models/home.php");
 require("controllers/home.php");
 
 //create the controller and execute the action
-$application = new Application($_GET);
+if(isset($_POST))
+{
+	$application = Application::Dataposted($_GET, $_POST);
+
+}
+else
+{
+	$application = new Application($_GET);
+}
 $controller = $application->CreateController();
 $controller->ExecuteAction();
 

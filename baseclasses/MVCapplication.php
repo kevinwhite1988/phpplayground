@@ -9,7 +9,7 @@ class Application
 	private $action;
 	private $url;
 	
-//need to start making views
+	//need to start making views
 	//Storing url on construction and setting to home/index if it's blank
 	public function __construct($url)
 	{
@@ -57,6 +57,30 @@ class Application
 		else
 		{
 			return new Error("badUrl",$this->url);
+		}
+	}
+	
+	//If data is posted, this static function is called instead of creating a new Application object
+	public static function Dataposted($url, $posted)
+	{
+		$instance = new self();
+		$instance->posted = $posted;
+		$instance->url = $url;
+		if ($instance->url['controller'] == "")
+		{
+			$instance->controller = "home";
+		}
+		else
+		{
+			$instance->controller = $instance->url['controller'];
+		}
+		if ($instance->url['action'] == "") 
+		{
+			$instance->action = "index";
+		}
+		else
+		{
+			$instance->action = $instance->url['action'];
 		}
 	}
 }

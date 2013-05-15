@@ -1,0 +1,4 @@
+use Phptimeclock;
+drop table Users;
+
+drop table Employees;
