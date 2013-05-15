@@ -10,7 +10,7 @@ const SQLCONNECTION = 'put in connection string here';
 
 public class Timeclockapp 
 {
-
+	//should I extend this off of a database base class?
 }
 
 namespace Phptimeclock/Users

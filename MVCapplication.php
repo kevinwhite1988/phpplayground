@@ -9,6 +9,7 @@ class Application
 	private $action;
 	private $url;
 	
+//need to start making views
 	//Storing url on construction and setting to home/index if it's blank
 	public function __construct($url)
 	{
