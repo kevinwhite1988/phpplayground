@@ -1,0 +1,84 @@
+<?php
+
+
+
+/*Place Constants below here for the whole application*/
+
+const DBNAME = 'database name here';
+const HOST = 'put in host here';
+const SQLCONNECTION = 'put in connection string here';
+
+public class Timeclockapp 
+{
+
+}
+
+namespace Phptimeclock/Users
+
+public interface iUser
+{
+	public function getUsername();
+	public function setUsername();
+	public function getUserID();
+	public function setUserID();
+}
+
+public interface iEmployee
+{
+	public function getRole();
+	public function setRole();
+	public function getPayrate();
+	public function setPayrate();
+}
+
+public abstract class Employee implements iUser, iEmployee
+{
+	private $username;
+	private $userid;
+	private $role;
+	private $payrate;
+	
+	public function getUsername()
+	{
+		return $this->username;
+	}
+	
+	public function setUsername($username);
+	{
+		$this->username = $username;
+	}
+	
+	public function getUserid()
+	{
+		return $this->userid;
+	}
+	
+	public function setUserid($userid)
+	{
+		$this->userid = $userid;
+	}
+	
+	public function getRole()
+	{
+		return $this->role;
+	}
+	public function setRole($role)
+	{
+		$this->role = $role;
+	}
+	public function getPayrate()
+	{
+		return $this->payrate;
+	}
+	public function setPayrate($payrate)
+	{
+		$this->payrate = $payrate;
+	}
+	function __construct($userid)
+	{
+		//code here to hit database to construct user info.
+	}
+	
+}
+	
+?>
