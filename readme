@@ -1,3 +1,13 @@
 Starting to build a lightweight MVC timeclock application.
 
 Started writing this on 5/14/2013 to show a little php code.
+
+End 5/14/2013
+Going to start creating objects based off of the database tomorrow.
+Want to add Htmlhelpers to models tomorrow (easy)
+
+Will update SQL Query with timesheet table and will include an insert of Admin into the program.
+
+Admin is NOT an employee in the system, just a user.
+
+I know I have some Php on my network somewhere, I also know there may be a user authentication class out there, hopefully I can find it and implement it here.
