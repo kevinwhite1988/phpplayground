@@ -2,6 +2,8 @@
 
 /*Remember, you need to set up many options in the application and webserver before this will work*/
 
+//making sure git repo is good
+
 
 //require the general classes
 //base application classes are all under the MVCapplication namespace
