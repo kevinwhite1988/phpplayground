@@ -1,5 +1,7 @@
 <?php
 
+namespace models;
+
 public abstract class Databasemodels()
 {
 	private $dbhost = 'add host';
