@@ -2,6 +2,7 @@
 
 namespace models;
 
+//need to add other interfaces or abstract classes here?
 public abstract class Databasemodels()
 {
 	private $dbhost = 'add host';

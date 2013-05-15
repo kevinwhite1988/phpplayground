@@ -1,19 +1,9 @@
 <?php
 
-
-
-/*Place Constants below here for the whole application*/
-
-const DBNAME = 'database name here';
-const HOST = 'put in host here';
-const SQLCONNECTION = 'put in connection string here';
-
 public class Timeclockapp 
 {
 	//should I extend this off of a database base class?
 }
-
-namespace Phptimeclock/Users
 
 public interface iUser
 {
@@ -76,7 +66,7 @@ public abstract class Employee implements iUser, iEmployee
 	}
 	function __construct($userid)
 	{
-		//code here to hit database to construct user info.
+		//use this to construct user after authenticating
 	}
 	
 }
