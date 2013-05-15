@@ -1,0 +1,20 @@
+/*create database Phptimeclock;*/
+
+use Phptimeclock;
+
+create table Users
+(
+	Userid int not null AUTO_INCREMENT,
+	Username varchar(80) not null,
+	Password varchar(120) not null,
+	PRIMARY KEY (Userid)
+);
+
+use Phptimeclock;
+create table Employees
+(
+	EmployeeID int not null,
+	Role varchar(80) not null,
+	Payrate decimal(10,2) not null,
+	CONSTRAINT FOREIGN KEY (EmployeeID) REFERENCES Users(Userid) on delete cascade on update cascade
+);
