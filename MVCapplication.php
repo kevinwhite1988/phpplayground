@@ -82,7 +82,7 @@ abstract class BaseController
 		$viewloc = 'views/' . get_class($this) . '/' . $this->action . '.php';
 		if($fullview)
 		{
-			require('views/maintemplate.php');
+			require('views/sitemaster.php');
 		}
 		else
 		{
