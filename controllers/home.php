@@ -1,6 +1,6 @@
 <?php
 
-public class Home extends BaseController
+class Home extends BaseController
 {
 	protected function Index()
 	{
