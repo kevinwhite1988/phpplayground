@@ -13,6 +13,11 @@ public class Home extends BaseController
 		$viewdata = "About page will go here.";
 		$this->ReturnView($viewdata, false);
 	}
+
+	protected function ClockAction($user)
+	{
+		//clock in user in here i'll get around to it
+	}
 }
 
 

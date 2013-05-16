@@ -57,6 +57,11 @@ public class HtmlHelpers
 		}
 		return $thisstring;
 	}
+
+	public static function CreateWholeForm($Formmodel)
+	{
+		//Going to iterate through the $Formmodel array to create the form based on the object
+	}
 }
 
 ?>
