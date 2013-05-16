@@ -4,17 +4,19 @@ namespace MVCapplication;
 
 class MVCapplication
 {
-	
+	//
 	private $controller;
 	private $action;
 	private $url;
 	private $posted;
+	private $id;
 	
 	//need to start making views
 	//Storing url on construction and setting to home/index if it's blank
 	public function __construct($url)
 	{
 		$this->url = $url;
+		$this->id = $this->url['id'];
 		if ($this->url['controller'] == "")
 		{
 			$this->controller = "home";
@@ -61,7 +63,8 @@ class MVCapplication
 		}
 	}
 }
-	
+
+
 abstract class BaseController
 {
 	protected $url;
@@ -79,14 +82,14 @@ abstract class BaseController
 	
 	protected function ReturnView($viewmodel, $fullview)
 	{
-		$viewloc = 'views/' . get_class($this) . '/' . $this->action . '.php';
+		$viewlocation = 'views/' . get_class($this) . '/' . $this->action . '.php';
 		if($fullview)
 		{
 			require('../../views/maintemplate.php');
 		}
 		else
 		{
-			require($viewloc);
+			require($viewlocation);
 		}
 	}
 }
