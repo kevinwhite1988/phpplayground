@@ -8,12 +8,14 @@ class Application
 	private $controller;
 	private $action;
 	private $url;
+	private $id;
 	
 	//need to start making views
 	//Storing url on construction and setting to home/index if it's blank
 	public function __construct($url)
 	{
 		$this->url = $url;
+		$this->id = $this->url['id'];
 		if ($this->url['controller'] == "")
 		{
 			$this->controller = "home";
@@ -66,6 +68,7 @@ class Application
 		$instance = new self();
 		$instance->posted = $posted;
 		$instance->url = $url;
+		$this->id = $this->url['id'];
 		if ($instance->url['controller'] == "")
 		{
 			$instance->controller = "home";
@@ -103,14 +106,14 @@ abstract class BaseController
 	
 	protected function ReturnView($viewmodel, $fullview)
 	{
-		$viewloc = 'views/' . get_class($this) . '/' . $this->action . '.php';
+		$viewlocation = 'views/' . get_class($this) . '/' . $this->action . '.php';
 		if($fullview)
 		{
 			require('views/maintemplate.php');
 		}
 		else
 		{
-			require($viewloc);
+			require($viewlocation);
 		}
 	}
 }

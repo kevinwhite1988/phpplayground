@@ -1,8 +1,8 @@
-/*create database Phptimeclock;*/
+create database IF NOT EXISTS Phptimeclock;
 
 use Phptimeclock;
 
-create table Users
+create table IF NOT EXISTS Users
 (
 	Userid int not null AUTO_INCREMENT,
 	Username varchar(80) not null,
@@ -10,11 +10,20 @@ create table Users
 	PRIMARY KEY (Userid)
 );
 
-use Phptimeclock;
-create table Employees
+
+create table IF NOT EXISTS Employees
 (
 	EmployeeID int not null,
 	Role varchar(80) not null,
 	Payrate decimal(10,2) not null,
 	CONSTRAINT FOREIGN KEY (EmployeeID) REFERENCES Users(Userid) on delete cascade on update cascade
+);
+
+create table IF NOT EXISTS Timesheet
+(
+	EmployeeID int not null,
+	ClockDate date not null,
+	ClockTime time not null,
+	ClockInOut varchar(3) not null,
+	CONSTRAINT FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
 );
